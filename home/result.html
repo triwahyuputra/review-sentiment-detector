@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Result</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+	<header>
+		<div class="container">
+		<h2>Sentiment Detector For Skin Care Product Reviews</h2>		
+	</div>
+	</header>
+	<p style="color:blue;font-size:20;text-align: center;"><b>Sentiment Result</b></p>
+	<div class="results">
+	{% if prediction == 0%}
+	<h2 style="color:red; text-align: center;">Negative</h2>
+	{% elif prediction == 1%}
+	<h2 style="color:green; text-align: center;">Positive</h2>
+	{% endif %}
+	</div>
+	<form style="text-align: center;">
+		<input type="button" value="Go back!" class="btn-info" style="align-items: center;" onclick="history.back()">
+	</form>
+</body>
+</html>
